@@ -1,17 +1,26 @@
+/**
+ Componente Estatísticas Webgenium
+ @creation 01-Fev-2011
+ @author Luiz Felipe Weber
+ @authorEmail suporte@webgenium.com.br
+ @authorUrl http://webgenium.com.br/v2/estatisticas-joomla
+ @copyright Copyright (C) 2011 Webgenium
+ @license GNU/GPL
+ @version 1.9
+ @description Componente Analytics Webgenium. Este componente é uma implementação do com_analytics. 
+ Possui algumas funcionalidades a mais, como gráfico animado, tradução em pt-br e mostra as estatísticas do Google Analytics do site cadastrado de uma forma mais rápida e totalmente integrada.
+**/
+
 Componente Estatísticas que integra as principais informações do Google Analytics dentro de sua tela do Joomla.
 
 Funcionalidades:
 
 - Envio de Estatísticas por email para o Email configurado no Joomla
-
 - Temas para o gráfico ( Cinza, Verde, Preto e Branco com vermelho)
-
 - Integrado com Ecommerce do Virtuemart ( possui configuração para trazer o ticket médio ).
-
 - Fácil configuração e utlização.
-
 - Utiliza os gráficos do Highcharts.com ( sem usar flash, usando Jquery )
-
+- Possui um painel de configuração para habilitar o relatório de loja virtual
 
 * Para funcionar completamente, instale os plugins que estão no repositório também
 ** BigShotAnalytics
