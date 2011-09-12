@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+		<param name="ga_account_id" type="text" default="" label="ID da conta do Google Analytics" description="Este valor será encontrado na página de edição do perfil do Analytics: https://www.google.com/analytics/settings/profile_summary. Ex.: ga:XXXXXXXX" /> 
+		<param name="webPropertyId" type="text" default="" label="ID do rastreio das estatísticas" description="Este valor é o id do tracker das estatísticas. Ex.: UA-XXXXXXXX-X" />
+		<param name="ga_email" type="text" default="" label="Email da conta do Analytics" description="Este email por padrão é: analytics@dominio_do_cliente.com.br" /> 
+		<param name="ga_pass" type="password" default="" label="Senha da conta do Analytics" description="Esta senha é usada ao acesso à conta: analytics@dominio_do_cliente.com.br" /> 
+		<param name="theme" type="list" default="default" label="Select a Theme" description="">
+			<option value="default">-Default-</option>
+			<option value="gray.js">Gray</option>
+			<option value="grid.js">Grid</option>
+			<option value="dark-green.js">Dark Green</option>
+			<option value="dark-blue.js">Dark Blue</option>
+		</param>
+		<param name="export" type="list" default="Yes" label="Export Module" description="">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>		
+		<param name="ecommerce" type="list" default="No" label="Ecommerce Website?" description="">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="busca_interna" type="list" default="No" label="Show Internal Searches?" description="">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="cache_component" type="list" default="Yes" label="Cache component?" description="">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+    </params>
+</config>

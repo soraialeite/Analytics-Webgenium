@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD component 1.0//EN" "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="component" version="1.6" method="upgrade">
+  <name>Analytics</name>
+  <creationDate>09-Set-2011</creationDate>
+  <author>Luiz Felipe Weber</author>
+  <authorEmail>suporte@webgenium.com.br</authorEmail>
+  <authorUrl>http://webgenium.com.br</authorUrl>
+  <copyright>Copyright (C) 2011 Webgenium</copyright>
+  <license>GNU/GPL</license>
+  <version>1.6</version>
+  <description>Componente Analytics Webgenium. Este componente é uma implementação do com_analytics. Possui algumas funcionalidades a mais, como gráfico animado, tradução em pt-br e mostra as estatísticas do Google Analytics do site cadastrado de uma forma mais rápida e totalmente integrada.</description>
+  <installfile>install.analytics.php</installfile>
+  <uninstallfile>uninstall.analytics.php</uninstallfile>
+  <install>
+    <sql/>
+  </install>
+  <uninstall>
+    <sql/>
+  </uninstall>
+  <files folder="site">
+    <folder>language</folder>
+    <folder>models</folder>
+    <folder>views</folder>
+    <filename>analytics.php</filename>
+    <filename>controller.php</filename>
+    <filename>index.html</filename>
+    <filename>router.php</filename>
+  </files>
+  <languages folder="site/language">
+    <language tag="en-GB">en-GB.com_analytics.ini</language>
+    <language tag="pt-BR">pt-BR.com_analytics.ini</language>
+  </languages>
+  <administration>
+    <menu img="components/com_analytics/images/icon-16-analytics.png" link="option=com_analytics">Analytics</menu>
+    <files folder="admin">
+      <folder>helpers</folder>
+      <folder>images</folder>
+      <folder>language</folder>
+      <folder>models</folder>
+      <folder>views</folder>
+      <filename>analytics.php</filename>
+      <filename>config.xml</filename>
+      <filename>controller.php</filename>
+      <filename>index.html</filename>
+    </files>
+    <languages folder="admin/language">
+      <language tag="en-GB">en-GB.com_analytics.ini</language>
+      <language tag="en-GB">en-GB.com_analytics.menu.ini</language>
+      <language tag="pt-BR">pt-BR.com_analytics.ini</language>
+      <language tag="pt-BR">pt-BR.com_analytics.menu.ini</language>
+    </languages>
+  </administration>
+  <params>
+    <param name="ga_account_id" type="text" label="ID da conta do Google Analytics" default=""/>
+    <param name="webPropertyId" type="text" label="ID do rastreio das estatísticas" default=""/>    
+    <param name="ga_email" type="text" label="Email da conta do Analytics" default=""/>
+    <param name="ga_pass" type="password" label="Senha da conta do Analytics" default=""/>
+	<param name="theme" type="list" default="default" label="Select a Theme" description="">
+		<option value="default">-Default-</option>
+		<option value="gray.js">Gray</option>
+		<option value="grid.js">Grid</option>
+		<option value="dark-green.js">Dark Green</option>
+		<option value="dark-blue.js">Dark Blue</option>
+	</param>
+	<param name="export" type="list" default="1" label="Export Module" description="">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</param>
+  </params>
+</install>
