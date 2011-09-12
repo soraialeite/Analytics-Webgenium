@@ -252,10 +252,10 @@ class AnalyticsViewDefault extends JView {
 			try{			
 				//$relatorio = $this->ga->requestReportData(ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results);
 				// faz a consulta com cache
-				$relatorio = $this->cache->call( array( $this->ga, 'requestReportData' ),  
-					ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results
-				);
-
+					$relatorio = $this->cache->call( array( $this->ga, 'requestReportData' ),  
+						ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results
+					);					
+				
 				// verifica se adiciona ao template ou nao
 				if ($template) {
 					// ja adiciona ao template				
@@ -267,10 +267,7 @@ class AnalyticsViewDefault extends JView {
 			} catch(Exception $e ) {
 				AnalyticsHelper::errorAnalytics($e->getMessage());
 			}
-			$relatorio = $this->cache->call( array( $this->ga, 'requestReportData' ),  
-					ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results
-			);
-
+			
 		}
 	}
 	
