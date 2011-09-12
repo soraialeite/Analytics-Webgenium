@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system" method="upgrade">
+	<name>jAnalyticsVirtuemart</name>
+	<author>Matthieu BARBE</author>
+	<creationDate>19/08/2010</creationDate>
+	<copyright>Copyright (C) 2010 ccomca.com</copyright>
+	<license>GNU/GPL v2</license>
+	<authorEmail>matthieu@ccomca.com</authorEmail>
+	<authorUrl>http://www.ccomca.com/communaute/item/361-jlikeflexi.html</authorUrl>
+	<version>1.0</version>
+	<description>JAV_DESCRIPTION</description>
+	<files>
+		<filename plugin="jAnalyticsVirtuemart">jAnalyticsVirtuemart.php</filename>
+	</files>
+	<params>
+		<param name="table_prefix" type="text" default="vm" label="JAV_TABLE_PREFIX" description="JAV_TABLE_PREFIX_DESCRIPTION"/>
+	</params>
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_jAnalyticsVirtuemart.ini</language>
+		<language tag="fr-FR">fr-FR.plg_system_jAnalyticsVirtuemart.ini</language>
+		<language tag="pt-BR">pt-BR.plg_system_jAnalyticsVirtuemart.ini</language>
+	</languages>
+</install>

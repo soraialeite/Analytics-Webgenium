@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>System - BIGSHOT Google Analytics</name>
+	<author>Luiz Felipe Weber</author>
+	<creationDate>January 2010</creationDate>
+	<copyright></copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>suporte@webgenium.com.br</authorEmail>
+	<authorUrl>http://webgenium.com.br</authorUrl>
+	<version>1.5.3</version>
+	<description>Este plugin incluir o tracker do Google Analytics</description>
+	<files>
+		<filename plugin="bigshotgoogleanalytics">bigshotgoogleanalytics.php</filename>
+	</files>
+	<params>
+	</params>
+</install>
