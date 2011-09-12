@@ -1,0 +1,13 @@
+Componente Estatísticas que integra as principais informações do Google Analytics dentro de sua tela do Joomla.
+
+Funcionalidades:
+
+- Envio de Estatísticas por email para o Email configurado no Joomla
+
+- Temas para o gráfico ( Cinza, Verde, Preto e Branco com vermelho)
+
+- Integrado com Ecommerce do Virtuemart ( possui configuração para trazer o ticket médio ).
+
+- Fácil configuração e utlização.
+
+- Utiliza os gráficos do Highcharts.com ( sem usar flash, usando Jquery )
