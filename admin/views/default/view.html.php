@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL);
 /**
  * Joomla! 1.5 component Analytics Webgenium
  *
@@ -141,7 +140,7 @@ class AnalyticsViewDefault extends JView {
 								'grafico',
 								array('date'),  // dimensions
 								array('visits' ,'pageviews' ), // metrics
-								'-date',	null, $um_mes_atras, $data_atual, 1, 31, false);
+								'-date',	null, $um_mes_atras, $data_atual, 1, 31, false);	
 		
 		// monta o arquivo
 		$arquivo = "# ----------------------------------------\n".		
@@ -156,16 +155,21 @@ class AnalyticsViewDefault extends JView {
 		"Day	Visitantes	Pageviews\n";
 
 		$linha = '';
+		// relatorio não-gerado
+		if (count($relatorio) == 0 ) {
+			AnalyticsHelper::errorAnalytics('Refresh to update graphic data');
+			return false;
+		}
+		
 		foreach($relatorio as $graph) {
 			$linha .=  (date("D, M d, Y",strtotime($graph->getDate()) ) ).";".
 					   ($graph->getVisits()) .";".
 					   ($graph->getPageviews()) ."\n";
 		}
-		//$this->assignRef('resultado_grafico',$relatorio);
-
+				
 		$arquivo .= $linha;
 		$arquivo .= "# --------------------------------------------------------------------------------\n";
-
+		
 		try {
 			// verifica se o arquivo de cache ja existe ou nao
 			if (!file_exists($caminho_arquivo)) {
@@ -233,7 +237,7 @@ class AnalyticsViewDefault extends JView {
 					array('city'),  // dimensions
 					array('visits'), // metrics
 					'-visits',	null, $um_mes_atras, $data_atual, 1, 15 );						
-					
+					 
 		// comercio eletronico
 		if ($this->params->get('ecommerce')) {
 			$this->novoRelatorio (
