@@ -1,19 +1,13 @@
 <?php
-/**
- * Joomla! 1.5 component Analytics
- *
- * @version $Id: analytics.php 2009-07-17 10:34:47 svn $
- * @author Kinshuk Kulshreshtha
- * @package Joomla
- * @subpackage Analytics
- * @license GNU/GPL
- *
- * Show Google Analytics in Joomla Backend
- *
- * This component file was created using the Joomla Component Creator by Not Web Design
- * http://www.notwebdesign.com/joomla_component_creator/
- *
- */
+/*------------------------------------------------------------------------
+# com_analytics - Webgenium Analytics
+# ------------------------------------------------------------------------
+# author    Luiz Felipe Weber - Webgenium System
+# copyright Copyright (C) 2011 webgenium.com.br. All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: http://loja.weber.eti.br / http://webgenium.com.br
+# Technical Support:  Forum - https://github.com/webgenium/Analytics-Webgenium
+-------------------------------------------------------------------------*/
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');

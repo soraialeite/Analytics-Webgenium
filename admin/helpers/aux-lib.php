@@ -1,4 +1,13 @@
 <?php
+/*------------------------------------------------------------------------
+# com_analytics - Webgenium Analytics
+# ------------------------------------------------------------------------
+# author    Luiz Felipe Weber - Webgenium System
+# copyright Copyright (C) 2011 webgenium.com.br. All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: http://loja.weber.eti.br / http://webgenium.com.br
+# Technical Support:  Forum - https://github.com/webgenium/Analytics-Webgenium
+-------------------------------------------------------------------------*/
 /*  Copyright 2009  Carson McDonald  (carson@ioncannon.net)
 
     This program is free software; you can redistribute it and/or modify

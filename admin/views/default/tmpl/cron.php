@@ -1,8 +1,5 @@
-<html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    </head>
-    <style type="text/css">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<style type="text/css"><!--
         body {
            font-size: 11px;
         }
@@ -11,49 +8,46 @@
            font-size: 11px;
            font: 11px arial;
         }
-    </style>
-    <body>
-    <table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
-    <tbody>
-    <tr>
-    <td>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-    <td><a href="http://www.webgenium.com.br" target="_blank"><img src="http://www.webgenium.com.br/imagens/logoWebgenium.png" border="0" alt="Webgenium" width="264" height="77" /></a></td>
-    <td><a href="http://www.webgenium.com.br"><img src="http://www.webgenium.com.br/imagens/menuDesenvSitesWeb.png" border="0" alt="Desenvolvimento de Sites e Sistemas Web" width="126" height="77" /></a></td>
-    <td><a href="http://www.webgenium.com.br"><img src="http://www.webgenium.com.br/imagens/menuRegistroDominios.png" border="0" alt="Registro de Dom&iacute;nios" width="104" height="77" /></a></td>
-    <td><a href="http://www.webgenium.com.br"><img src="http://www.webgenium.com.br/imagens/menuHospedagem.png" border="0" alt="Hospedagem" width="106" height="77" /></a></td>
-    </tr>
-    </tbody>
-    </table>
-    </td>
-    </tr>
-    <tr>
-    <td style="padding-left:14px; padding-right:14px; padding-bottom:5px; padding-top:5px;">
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-    <td style="background:url(http://www.webgenium.com.br/imagens/bgAssunto.png); background-repeat:no-repeat; background-position:left; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:20px; font-weight:bold; padding:8px;">Veja as Estatísticas de seu site de <b style='color: #456FFF'><?php echo date('Y-m-d',strtotime('1 month ago')); ?></b> a <b style='color: #456FFF'><?php echo date('d/m/Y'); ?></b><br/><div style='color: #7F7F7F;font-size: 12px; font: 12px arial; font-family: arial;'>http://<?=$_SERVER['HTTP_HOST']?></div></td>
-    <td width="229"><img src="http://www.webgenium.com.br/imagens/iconAtendimento.png" alt="Atendimento" width="229" height="98" /></td>
-    </tr>
-    <tr>
-    <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px; border:1px solid #dfdfdf; border-top:0px;" colspan="2" height="200" valign="top">
-    <p><?php echo $this->conteudo_email; ?></p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>Equipe Webgenium System<br/>
-    Solu&ccedil;&otilde;es Inteligentes Via Web</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-    </td>
-    </tr>
-    <tr>
-    <td><img src="http://www.webgenium.com.br/imagens/rodape.png" alt="Rodape" width="600" height="34" /></td>
-    </tr>
-    </tbody>
-    </table>
-    </body>
-</html>
+--></style>
+<div style="background-color: #e2e8df; width: 100%; font-family: Tahoma,Geneva,Kalimati,sans-serif; color: #8a8a8a; text-align: center;">
+<table style="text-align:left;margin:auto;" width="750" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td width="37"></td>
+<td style="background-color:#fbfbf7" valign="top" width="496">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="2" height="20"></td>
+</tr>
+<tr>
+<td width="20"></td>
+<td style="background-color:#F9F7D3">
+<h1><?=JText::_('Statistics')?></h1></td>
+<td width="20"></td>
+</tr>
+<tr>
+<td colspan="5">
+<table width="100%">
+<tbody>
+<tr>
+<td style="text-align: center;"><span><strong><?=$this->conteudo_email?></strong></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="27"></td>
+</tr>
+<tr style="line-height: 0px;">
+<td style="line-height: 0px;" colspan="3"></td>
+</tr>
+<tr>
+<td colspan="3" style="padding:20px 0px;font-size:10px;color:#000000;margin:auto;text-align:center;"><br /></td>
+</tr>
+</tbody>
+</table>
+</div>

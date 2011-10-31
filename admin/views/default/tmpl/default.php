@@ -1,4 +1,18 @@
 ﻿<?php
+/**
+ * Joomla! 1.5 component Analytics Webgenium
+ *
+ * @version $Id: controller.php 2011-09-09 18:00:00 svn $
+ * @author Luiz Felipe Weber
+ * @author Kinshuk Kulshreshtha
+ * @website webgenium.com.br
+ * @package Joomla
+ * @subpackage Analytics Webgenium
+ * @license GNU/GPL
+ *
+ * Show Google Analytics in Joomla Backend 
+ *
+ */
 defined('_JEXEC') or die('Restricted access');
 
 try{
@@ -21,8 +35,8 @@ $mais_referencias 	= $this->mais_referencias;
 $mais_cidades 		= $this->mais_cidades;
 $transacao 				= (isset($this->transacao)?$this->transacao:'');
 // config ecommerce
-$ecommerce 			= $this->ecommerce;
-$mostrar_busca_interna		= $this->mostrar_busca_interna;
+$ecommerce 			= @$this->ecommerce;
+$mostrar_busca_interna		= @$this->mostrar_busca_interna;
 
 // configuracao do grafico ( tema e modulos )
 $export 			= isset($this->export)?$this->export:'';
@@ -31,6 +45,11 @@ $theme			= isset($this->theme)?$this->theme:'';
   <div style="text-align: center;" align="center">
 
   <div style="padding-bottom: 5px;" align="center">
+	<?php
+	if ($this->logo_component != '') {
+				echo "<div style='float:right; position: relative'>".$this->logo_component."</div>";
+			}
+	?>
 	<div style="text-align:center; width: 70%" align="center">
         <?php
         if ($task!='cron') {
@@ -57,9 +76,10 @@ $theme			= isset($this->theme)?$this->theme:'';
 			<?php
 			if ($theme != 'default'){
 				echo '<script type="text/javascript" src="'.($component. DS .'themes'. DS .$theme).'"></script>';
-			}
-			?>			
+			}			
 			
+			?>			
+
 			<div id="grafico" align="center" style="text-align:center"></div>
         <?php 
 		} else {
@@ -278,6 +298,7 @@ $theme			= isset($this->theme)?$this->theme:'';
 
   </div>
   
+  <div align="center"><?=$this->logo?></div>
  <?php
 
 

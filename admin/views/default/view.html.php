@@ -2,7 +2,7 @@
 /**
  * Joomla! 1.5 component Analytics Webgenium
  *
- * @version $Id: analytics.php 2011-09-09 18:00:00 svn $
+ * @version $Id: controller.php 2011-09-09 18:00:00 svn $
  * @author Luiz Felipe Weber
  * @author Kinshuk Kulshreshtha
  * @website webgenium.com.br
@@ -13,11 +13,13 @@
  * Show Google Analytics in Joomla Backend 
  *
  */
+
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
 // Import Joomla! libraries
 jimport('joomla.application.component.view');
+jimport( 'joomla.application.application' );
 
 class AnalyticsViewDefault extends JView {
 
@@ -92,13 +94,29 @@ class AnalyticsViewDefault extends JView {
 		$js ="function submitform(pressbutton) {
 			location.href='index.php?option=com_analytics&task='+pressbutton;
 		}";
-		$doc->addScriptDeclaration($js);
+		$doc->addScriptDeclaration($js);		
+		$task= JRequest::getVar('task');
+
+		$logo = '';
+		$logo_component = '';
+		if ($this->params->get('show_logo')) {
+			$logo = "<a href='http://webgenium.com.br'><img src='components". DS ."com_analytics". DS ."images". DS ."logo.jpg' border='0'/></a>";			
+			if ($task != 'cron') {
+				$logo_component = "<img src='components". DS ."com_analytics". DS ."images". DS ."webgenium_analytics.jpg' border='0'/>";
+			}
+		}
+		$this->assignRef('logo',$logo);
+		$this->assignRef('logo_component',$logo_component);
+		
 
         JToolBarHelper::title(JText::_('Analytics'), 'chart-icon.png');
 
 		// botão de enviar os emails ( cron ).
 		JToolBarHelper::custom( 'cron', 'send', 'send', JText::_('SEND_STATS'), false, false );
         JToolBarHelper::preferences('com_analytics', 400);
+		
+		// botão de enviar os emails ( cron ).
+		JToolBarHelper::custom( 'help', 'help.png', 'help.png', 'Help', false, false );
 		
 		// grafico cacheado com as visitas do dia
 		$this->montaGrafico();
@@ -113,7 +131,7 @@ class AnalyticsViewDefault extends JView {
 		$this->assignRef('theme',$this->params->get('theme'));
 		$this->assignRef('export',$this->params->get('export'));
 		$this->assignRef('ecommerce',$this->params->get('ecommerce_config'));
-		$this->assignRef('mostrar_busca_interna',$this->params->get('mostrar_busca_interna'));		
+		$this->assignRef('mostrar_busca_interna',$this->params->get('mostrar_busca_interna'));				
         parent::display($tpl);
     }
 
@@ -122,6 +140,8 @@ class AnalyticsViewDefault extends JView {
         $this->assignRef('nome_cliente', $nome_cliente);
         $this->assignRef('conteudo_email', $conteudo_email);
     }
+	
+	
 
 	function montaGrafico($resultado_somente=false) {
 		$caminho_arquivo =JPATH_CACHE. DS .($this->arquivo_cache);
@@ -140,7 +160,7 @@ class AnalyticsViewDefault extends JView {
 								'grafico',
 								array('date'),  // dimensions
 								array('visits' ,'pageviews' ), // metrics
-								'-date',	null, $um_mes_atras, $data_atual, 1, 31, false);	
+								'-date',	null, $um_mes_atras, $data_atual, 1, 31, false);
 		
 		// monta o arquivo
 		$arquivo = "# ----------------------------------------\n".		
@@ -155,21 +175,16 @@ class AnalyticsViewDefault extends JView {
 		"Day	Visitantes	Pageviews\n";
 
 		$linha = '';
-		// relatorio não-gerado
-		if (count($relatorio) == 0 ) {
-			AnalyticsHelper::errorAnalytics('Refresh to update graphic data');
-			return false;
-		}
-		
 		foreach($relatorio as $graph) {
 			$linha .=  (date("D, M d, Y",strtotime($graph->getDate()) ) ).";".
 					   ($graph->getVisits()) .";".
 					   ($graph->getPageviews()) ."\n";
 		}
-				
+		//$this->assignRef('resultado_grafico',$relatorio);
+
 		$arquivo .= $linha;
 		$arquivo .= "# --------------------------------------------------------------------------------\n";
-		
+
 		try {
 			// verifica se o arquivo de cache ja existe ou nao
 			if (!file_exists($caminho_arquivo)) {
@@ -237,7 +252,7 @@ class AnalyticsViewDefault extends JView {
 					array('city'),  // dimensions
 					array('visits'), // metrics
 					'-visits',	null, $um_mes_atras, $data_atual, 1, 15 );						
-					 
+					
 		// comercio eletronico
 		if ($this->params->get('ecommerce')) {
 			$this->novoRelatorio (
@@ -256,10 +271,10 @@ class AnalyticsViewDefault extends JView {
 			try{			
 				//$relatorio = $this->ga->requestReportData(ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results);
 				// faz a consulta com cache
-					$relatorio = $this->cache->call( array( $this->ga, 'requestReportData' ),  
-						ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results
-					);					
-				
+				$relatorio = $this->cache->call( array( $this->ga, 'requestReportData' ),  
+					ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results
+				);
+
 				// verifica se adiciona ao template ou nao
 				if ($template) {
 					// ja adiciona ao template				
@@ -271,7 +286,10 @@ class AnalyticsViewDefault extends JView {
 			} catch(Exception $e ) {
 				AnalyticsHelper::errorAnalytics($e->getMessage());
 			}
-			
+			$relatorio = $this->cache->call( array( $this->ga, 'requestReportData' ),  
+					ga_profile_id, $dimensions, $metrics, $sort_metric, $filter, $start_date, $end_date, $start_index, $max_results
+			);
+
 		}
 	}
 	
